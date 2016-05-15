@@ -5,7 +5,7 @@ Home: https://www.gnu.org/software/binutils/
 
 Package license: GPL 3
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: A set of programming tools for creating and managing binary programs, object files, libraries, profile data, and assembly source code.
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/binutils-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/binutils-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/binutils-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/binutils-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/binutils-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/binutils-feedstock/branch/master)
