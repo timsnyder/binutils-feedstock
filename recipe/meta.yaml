@@ -1,13 +1,15 @@
-{% set version = "2.26" %}
+{% set name = "binutils" %}
+{% set version = "2.27" %}
+{% set sha256 = "369737ce51587f92466041a97ab7d2358c6d9e1b6490b3940eb09fb0a9a6ac88" %}
 
 package:
-  name: binutils
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: binutils-{{ version }}.tar.bz2
-  url: https://ftp.gnu.org/gnu/binutils/binutils-{{ version }}.tar.bz2
-  sha256: c2ace41809542f5237afc7e3b8f32bb92bc7bc53c6232a84463c423b0714ecd9
+  fn: {{ name }}-{{ version }}.tar.bz2
+  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
+  sha256: {{ sha256 }}
 
 build:
   number: 0
