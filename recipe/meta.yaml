@@ -1,6 +1,6 @@
 {% set name = "binutils" %}
-{% set version = "2.31" %}
-{% set sha256 = "2c49536b1ca6b8900531b9e34f211a81caf9bf85b1a71f82b81ae32fcd8ffe19" %}
+{% set version = "2.32" %}
+{% set sha256 = "de38b15c902eb2725eac6af21183a5f34ea4634cb0bcef19612b50e5ed31072d" %}
 
 package:
   name: {{ name }}
