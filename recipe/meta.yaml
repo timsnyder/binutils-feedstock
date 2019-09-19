@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   skip: True  # [not linux]
 
 requirements:
@@ -21,6 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
     - bison
     - flex
+    - make
 
 test:
   commands:
@@ -46,6 +47,11 @@ test:
 about:
   home: https://www.gnu.org/software/binutils/
   license: GPL 3
+  license_file:
+    - COPYING
+    - COPYING.LIB
+    - COPYING3
+    - COPYING3.LIB
   summary: A set of programming tools for creating and managing binary programs, object files, libraries, profile data, and assembly source code.
 
 extra:
