@@ -18,10 +18,31 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 4
+  number: 5
   skip: True  # [not linux]
 
+requirements:
+  build:
+    - gcc_bootstrap_{{ target_platform }}
+    - make
+  host:
+  run:
+
 outputs:
+  - name: ld_impl_{{ target_platform }}
+    script: install_ld.sh
+    build:
+      merge_build_host: False
+    requirements:
+      build:
+        - gcc_bootstrap_{{ target_platform }}
+        - make
+      host:
+      run:
+    test:
+      commands:
+        - {{ chost }}ld --help
+
   - name: binutils_impl_{{ target_platform }}
     script: install_binutils.sh
     build:
@@ -31,7 +52,9 @@ outputs:
         - gcc_bootstrap_{{ target_platform }}
         - make
       host:
+        - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
       run:
+        - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
     test:
       commands:
         - {{ chost }}addr2line --help
@@ -56,9 +79,9 @@ outputs:
     script: install_binutils_symlinks.sh
     requirements:
       host:
-        - {{ pin_subpackage("binutils_impl_" + target_platform) }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
       run:
-        - {{ pin_subpackage("binutils_impl_" + target_platform) }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
     test:
       commands:
         - $PREFIX/bin/addr2line --help
