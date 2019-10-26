@@ -1,48 +1,84 @@
 {% set name = "binutils" %}
 {% set version = "2.32" %}
 {% set sha256 = "de38b15c902eb2725eac6af21183a5f34ea4634cb0bcef19612b50e5ed31072d" %}
+{% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
 
 package:
-  name: {{ name }}
+  name: binutils_split
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
-  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: {{ sha256 }}
+  - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
+    sha256: {{ sha256 }}
+    folder: .
+
+  # Get the patches from crosstool-ng
+  - url: https://github.com/crosstool-ng/crosstool-ng/archive/crosstool-ng-1.24.0.tar.gz
+    sha256: 36c0067a2da265aa88f8d91c1647d152c98a100b8e2ce416cf47dedf08c069e9
+    folder: crosstool_ng
 
 build:
-  number: 3
+  number: 4
   skip: True  # [not linux]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - bison
-    - flex
-    - make
+outputs:
+  - name: binutils_impl_{{ target_platform }}
+    script: install_binutils.sh
+    build:
+      merge_build_host: False
+    requirements:
+      build:
+        - gcc_bootstrap_{{ target_platform }}
+        - make
+      host:
+      run:
+    test:
+      commands:
+        - {{ chost }}addr2line --help
+        - {{ chost }}ar --help
+        - {{ chost }}as --help
+        - {{ chost }}c++filt --help
+        - {{ chost }}elfedit --help
+        - {{ chost }}gprof --help
+        - {{ chost }}ld --help
+        - {{ chost }}ld.bfd --help
+        - {{ chost }}ld.gold --help
+        - {{ chost }}nm --help
+        - {{ chost }}objcopy --help
+        - {{ chost }}objdump --help
+        - {{ chost }}ranlib --help
+        - {{ chost }}readelf --help
+        - {{ chost }}size --help
+        - {{ chost }}strings --help
+        - {{ chost }}strip --help
 
-test:
-  commands:
-    - addr2line --help
-    - ar --help
-    - as --help
-    - c++filt --help
-    - elfedit --help
-    - gold --help
-    - gprof --help
-    - ld --help
-    - ld.bfd --help
-    - ld.gold --help
-    - nm --help
-    - objcopy --help
-    - objdump --help
-    - ranlib --help
-    - readelf --help
-    - size --help
-    - strings --help
-    - strip --help
+  - name: binutils
+    script: install_binutils_symlinks.sh
+    requirements:
+      host:
+        - {{ pin_subpackage("binutils_impl_" + target_platform) }}
+      run:
+        - {{ pin_subpackage("binutils_impl_" + target_platform) }}
+    test:
+      commands:
+        - $PREFIX/bin/addr2line --help
+        - $PREFIX/bin/ar --help
+        - $PREFIX/bin/as --help
+        - $PREFIX/bin/c++filt --help
+        - $PREFIX/bin/elfedit --help
+        - $PREFIX/bin/gold --help
+        - $PREFIX/bin/gprof --help
+        - $PREFIX/bin/ld --help
+        - $PREFIX/bin/ld.bfd --help
+        - $PREFIX/bin/ld.gold --help
+        - $PREFIX/bin/nm --help
+        - $PREFIX/bin/objcopy --help
+        - $PREFIX/bin/objdump --help
+        - $PREFIX/bin/ranlib --help
+        - $PREFIX/bin/readelf --help
+        - $PREFIX/bin/size --help
+        - $PREFIX/bin/strings --help
+        - $PREFIX/bin/strip --help
 
 about:
   home: https://www.gnu.org/software/binutils/
@@ -57,3 +93,4 @@ about:
 extra:
   recipe-maintainers:
     - frol
+    - isuruf
