@@ -60,6 +60,9 @@ outputs:
         - libstdcxx-ng >={{ cxx_compiler_version }}
         - libgcc-ng >={{ c_compiler_version }}
     test:
+      downstreams:
+        - gfortran_linux-64
+        - gxx_linux-64
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
