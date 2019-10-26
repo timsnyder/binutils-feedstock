@@ -1,6 +1,5 @@
 {% set name = "binutils" %}
-{% set version = "2.32" %}
-{% set sha256 = "de38b15c902eb2725eac6af21183a5f34ea4634cb0bcef19612b50e5ed31072d" %}
+{% set version = "2.33.1" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
 
 package:
@@ -9,12 +8,13 @@ package:
 
 source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-    sha256: {{ sha256 }}
+    sha256: 0cb4843da15a65a953907c96bad658283f3c4419d6bcc56bf2789db16306adb2
     folder: .
 
   # Get the patches from crosstool-ng
-  - url: https://github.com/crosstool-ng/crosstool-ng/archive/crosstool-ng-1.24.0.tar.gz
-    sha256: 36c0067a2da265aa88f8d91c1647d152c98a100b8e2ce416cf47dedf08c069e9
+  # Using https://github.com/crosstool-ng/crosstool-ng/pull/1268
+  - url: https://github.com/isuruf/crosstool-ng/archive/931b37a4056fff186052c0e893a6682ab37e7035.tar.gz
+    sha256: b855a87957077c590f5d34754bee04b3a1154202f7823504c88db9eea61f4817
     folder: crosstool_ng
 
 build:
@@ -53,9 +53,16 @@ outputs:
         - make
       host:
         - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
+        - libstdcxx-ng >={{ cxx_compiler_version }}
+        - libgcc-ng >={{ c_compiler_version }}
       run:
         - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
+        - libstdcxx-ng >={{ cxx_compiler_version }}
+        - libgcc-ng >={{ c_compiler_version }}
     test:
+      downstreams:
+        - gfortran_linux-64
+        - gxx_linux-64
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
@@ -79,9 +86,9 @@ outputs:
     script: install_binutils_symlinks.sh
     requirements:
       host:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
       run:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
     test:
       commands:
         - $PREFIX/bin/addr2line --help
