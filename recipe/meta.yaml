@@ -53,9 +53,12 @@ outputs:
         - make
       host:
         - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
+        - libstdcxx-ng >={{ cxx_compiler_version }}
+        - libgcc-ng >={{ c_compiler_version }}
       run:
         - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
         - libstdcxx-ng >={{ cxx_compiler_version }}
+        - libgcc-ng >={{ c_compiler_version }}
     test:
       commands:
         - {{ chost }}addr2line --help
