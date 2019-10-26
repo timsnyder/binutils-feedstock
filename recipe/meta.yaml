@@ -83,9 +83,9 @@ outputs:
     script: install_binutils_symlinks.sh
     requirements:
       host:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
       run:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
     test:
       commands:
         - $PREFIX/bin/addr2line --help
