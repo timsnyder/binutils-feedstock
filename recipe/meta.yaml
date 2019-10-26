@@ -55,6 +55,7 @@ outputs:
         - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
       run:
         - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
+        - libstdcxx-ng >={{ cxx_compiler_version }}
     test:
       commands:
         - {{ chost }}addr2line --help
