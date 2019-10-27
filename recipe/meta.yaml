@@ -61,8 +61,8 @@ outputs:
         - libgcc-ng >={{ c_compiler_version }}
     test:
       requires:
-        - gfortran_{{ target_platform }}
-        - gxx_{{ target_platform }}
+        - gfortran_impl_{{ target_platform }}
+        - gxx_impl_{{ target_platform }}
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
@@ -82,7 +82,7 @@ outputs:
         - {{ chost }}strings --help
         - {{ chost }}strip --help
         - echo "int main() { return 0; }" > test.c
-        - $CC test.c -v
+        - {{ chost }}gcc test.c -v
 
   - name: binutils
     script: install_binutils_symlinks.sh
