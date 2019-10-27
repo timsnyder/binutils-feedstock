@@ -95,13 +95,14 @@ outputs:
 
   - name: binutils
     script: install_binutils_symlinks.sh
-    build:
-      skip: True
     requirements:
+      build:
+        - gcc_bootstrap_{{ target_platform }}
+        - make
       host:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
       run:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
+        - {{ pin_subpackage("binutils_impl_" + target_platform, exact=True) }}
     test:
       commands:
         - $PREFIX/bin/addr2line --help
