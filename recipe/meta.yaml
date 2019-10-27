@@ -18,7 +18,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 5
+  number: 6
   skip: True  # [not linux]
 
 requirements:
@@ -60,9 +60,9 @@ outputs:
         - libstdcxx-ng >={{ cxx_compiler_version }}
         - libgcc-ng >={{ c_compiler_version }}
     test:
-      downstreams:
-        - gfortran_linux-64
-        - gxx_linux-64
+      requires:
+        - gfortran_{{ target_platform }}
+        - gxx_{{ target_platform }}
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
@@ -81,6 +81,8 @@ outputs:
         - {{ chost }}size --help
         - {{ chost }}strings --help
         - {{ chost }}strip --help
+        - echo "int main() { return 0; }" > test.c
+        - $CC test.c -v
 
   - name: binutils
     script: install_binutils_symlinks.sh
