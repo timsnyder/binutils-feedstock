@@ -9,5 +9,16 @@ done
 mkdir build
 cd build
 
-../configure --prefix="$PREFIX" --enable-gold --target=$HOST --with-sysroot=$BUILD_PREFIX/$HOST/sysroot
+../configure \
+  --prefix="$PREFIX" \
+  --target=$HOST \
+  --with-sysroot=$BUILD_PREFIX/$HOST/sysroot \
+  --enable-ld=default \
+  --enable-gold=yes \
+  --enable-plugins \
+  --disable-multilib \
+  --disable-sim \
+  --disable-gdb \
+  --disable-nls
+
 make -j${CPU_COUNT}

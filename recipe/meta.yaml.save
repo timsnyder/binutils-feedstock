@@ -63,11 +63,8 @@ outputs:
       requires:
         - gfortran_impl_{{ target_platform }}
         - gxx_impl_{{ target_platform }}
-        - gcc_impl_{{ target_platform }}
         - cmake
         - make
-      files:
-        - tests
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
@@ -86,12 +83,7 @@ outputs:
         - {{ chost }}size --help
         - {{ chost }}strings --help
         - {{ chost }}strip --help
-        - export CC={{ chost }}gcc
-        - export CXX={{ chost }}g++
-        - export FC={{ chost }}gfortran
-        - ${CC} -Wall tests/aligned_alloc.c -o c_aligned -v
-        - ./c_aligned
-        - cd tests/fortomp && cmake .
+        - {{ chost }}gcc aligned_alloc.c -v
 
   - name: binutils
     script: install_binutils_symlinks.sh
