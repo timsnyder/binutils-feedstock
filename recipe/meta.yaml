@@ -89,7 +89,7 @@ outputs:
         - export CC={{ chost }}gcc
         - export CXX={{ chost }}g++
         - export FC={{ chost }}gfortran
-        - ${CC} -Wall tests/aligned_alloc.c -o c_aligned -v
+        - ${CC} -Wall tests/aligned_alloc.c -o c_aligned -L$PREFIX/lib/gcc/aarch64-conda_cos7-linux-gnu/7.3.0 -v
         - ./c_aligned
         - cd tests/fortomp && cmake .
 
