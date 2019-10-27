@@ -9,5 +9,5 @@ done
 mkdir build
 cd build
 
-../configure --prefix="$PREFIX" --enable-gold --target=$HOST --with-sysroot=$PREFIX/$HOST/sysroot
+../configure --prefix="$PREFIX" --enable-gold --target=$HOST --with-sysroot=$BUILD_PREFIX/$HOST/sysroot
 make -j${CPU_COUNT}
