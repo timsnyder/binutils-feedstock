@@ -92,8 +92,8 @@ outputs:
         - export CC={{ chost }}gcc
         - export CXX={{ chost }}g++
         - export FC={{ chost }}gfortran
-        - ${CC} -Wall tests/aligned_alloc.c -o c_aligned -nodefaultlibs $PREFIX/lib/gcc/aarch64-conda_cos7-linux-gnu/7.3.0/libgcc.a $PREFIX/lib/libgcc_s.so $PREFIX/lib/gcc/aarch64-conda_cos7-linux-gnu/sysroot/lib/libc.so.6  -v  # [aarch64]
-        - ./c_aligned  # [aarch64]
+        - ${CC} -Wall tests/aligned_alloc.c -o c_aligned -v
+        - ./c_aligned
         - cd tests/fortomp && cmake .
 
   - name: binutils
