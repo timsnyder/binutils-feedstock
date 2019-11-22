@@ -1,5 +1,5 @@
 {% set name = "binutils" %}
-{% set version = "2.33.1" %}
+{% set version = "2.32" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-    sha256: 0cb4843da15a65a953907c96bad658283f3c4419d6bcc56bf2789db16306adb2
+    sha256: de38b15c902eb2725eac6af21183a5f34ea4634cb0bcef19612b50e5ed31072d
     folder: .
 
   # Get the patches from crosstool-ng
@@ -18,8 +18,9 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 5
+  number: 6
   skip: True  # [not linux]
+  detect_binary_files_with_prefix: False
 
 requirements:
   build:
@@ -33,6 +34,7 @@ outputs:
     script: install_ld.sh
     build:
       merge_build_host: False
+      detect_binary_files_with_prefix: False
     requirements:
       build:
         - gcc_bootstrap_{{ target_platform }}
@@ -47,22 +49,28 @@ outputs:
     script: install_binutils.sh
     build:
       merge_build_host: False
+      detect_binary_files_with_prefix: False
     requirements:
       build:
         - gcc_bootstrap_{{ target_platform }}
         - make
       host:
-        - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
+        - ld_impl_{{ target_platform }}
         - libstdcxx-ng >={{ cxx_compiler_version }}
         - libgcc-ng >={{ c_compiler_version }}
       run:
-        - {{ pin_subpackage("ld_impl_" + target_platform, exact=True) }}
+        - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
         - libstdcxx-ng >={{ cxx_compiler_version }}
         - libgcc-ng >={{ c_compiler_version }}
     test:
-      downstreams:
-        - gfortran_linux-64
-        - gxx_linux-64
+      requires:
+        - gfortran_impl_{{ target_platform }}
+        - gxx_impl_{{ target_platform }}
+        - gcc_impl_{{ target_platform }}
+        - cmake
+        - make
+      files:
+        - tests
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
@@ -81,14 +89,26 @@ outputs:
         - {{ chost }}size --help
         - {{ chost }}strings --help
         - {{ chost }}strip --help
+        - export CC={{ chost }}gcc
+        - export CXX={{ chost }}g++
+        - export FC={{ chost }}gfortran
+        - ${CC} -Wall tests/aligned_alloc.c -o c_aligned -v
+        - ./c_aligned
+        - cd tests/fortomp && cmake .
 
   - name: binutils
     script: install_binutils_symlinks.sh
+    build:
+      merge_build_host: False
+      detect_binary_files_with_prefix: False
     requirements:
+      build:
+        - gcc_bootstrap_{{ target_platform }}
+        - make
       host:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
+        - binutils_impl_{{ target_platform }}
       run:
-        - {{ pin_subpackage("binutils_impl_" + target_platform, max_pin="x.x.x") }}
+        - {{ pin_subpackage("binutils_impl_" ~ target_platform, max_pin="x.x.x") }}
     test:
       commands:
         - $PREFIX/bin/addr2line --help
