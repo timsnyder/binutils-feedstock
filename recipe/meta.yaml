@@ -18,14 +18,12 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 7
+  number: 8
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
 requirements:
   build:
-    - gcc_bootstrap_{{ target_platform }}
-    - make
   host:
   run:
 
@@ -37,8 +35,6 @@ outputs:
       detect_binary_files_with_prefix: False
     requirements:
       build:
-        - gcc_bootstrap_{{ target_platform }}
-        - make
       host:
       run:
     test:
@@ -52,25 +48,14 @@ outputs:
       detect_binary_files_with_prefix: False
     requirements:
       build:
-        - gcc_bootstrap_{{ target_platform }}
-        - make
       host:
         - ld_impl_{{ target_platform }}
-        - libstdcxx-ng >={{ cxx_compiler_version }}
-        - libgcc-ng >={{ c_compiler_version }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
-        - libstdcxx-ng >={{ cxx_compiler_version }}
-        - libgcc-ng >={{ c_compiler_version }}
     test:
-      requires:
-        - gfortran_impl_{{ target_platform }}
-        - gxx_impl_{{ target_platform }}
+      downstreams:
+        - gfortran_{{ target_platform }}
         - gcc_impl_{{ target_platform }}
-        - cmake
-        - make
-      files:
-        - tests
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
@@ -89,12 +74,6 @@ outputs:
         - {{ chost }}size --help
         - {{ chost }}strings --help
         - {{ chost }}strip --help
-        - export CC={{ chost }}gcc
-        - export CXX={{ chost }}g++
-        - export FC={{ chost }}gfortran
-        - ${CC} -Wall tests/aligned_alloc.c -o c_aligned -v
-        - ./c_aligned
-        - cd tests/fortomp && cmake .
 
   - name: binutils
     script: install_binutils_symlinks.sh
@@ -103,8 +82,6 @@ outputs:
       detect_binary_files_with_prefix: False
     requirements:
       build:
-        - gcc_bootstrap_{{ target_platform }}
-        - make
       host:
         - binutils_impl_{{ target_platform }}
       run:
