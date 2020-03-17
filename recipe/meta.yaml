@@ -54,7 +54,7 @@ outputs:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
     test:
       downstreams:
-        - gfortran_{{ target_platform }}
+        - gfortran_impl_{{ target_platform }}
         - gcc_impl_{{ target_platform }}
       commands:
         - {{ chost }}addr2line --help
