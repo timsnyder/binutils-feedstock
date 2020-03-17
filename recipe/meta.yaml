@@ -12,9 +12,9 @@ source:
     folder: .
 
   # Get the patches from crosstool-ng
-  # Using https://github.com/crosstool-ng/crosstool-ng/pull/1268
-  - url: https://github.com/isuruf/crosstool-ng/archive/931b37a4056fff186052c0e893a6682ab37e7035.tar.gz
-    sha256: b855a87957077c590f5d34754bee04b3a1154202f7823504c88db9eea61f4817
+  # Using https://github.com/crosstool-ng/crosstool-ng/pull/1309
+  - url: https://github.com/crosstool-ng/crosstool-ng/archive/db980376cdf74ada7b085e422c52c36a2ce85cd3.tar.gz
+    sha256: 4a0be5a8d3a2076391ef096ceeaa5d6b207ac424f6a18913894bce1dc434c463
     folder: crosstool_ng
 
 build:
