@@ -18,7 +18,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 8
+  number: 9
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -36,7 +36,9 @@ outputs:
     requirements:
       build:
       host:
+        - sysroot_{{ target_platform }}
       run:
+        - sysroot_{{ target_platform }}
     test:
       commands:
         - {{ chost }}ld --help
