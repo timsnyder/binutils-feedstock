@@ -3,11 +3,13 @@ About binutils_split
 
 Home: https://www.gnu.org/software/binutils/
 
-Package license: GPL 3
+Package license: GPL-3.0-only
 
 Feedstock license: BSD 3-Clause
 
-Summary: A set of programming tools for creating and managing binary programs, object files, libraries, profile data, and assembly source code.
+Summary: A set of programming tools for creating and managing binary programs, object files,
+libraries, profile data, and assembly source code.
+
 
 
 
@@ -26,7 +28,7 @@ Current build status
     <td>Drone</td>
     <td>
       <a href="https://cloud.drone.io/conda-forge/binutils-feedstock">
-        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/master.svg?label=Linux">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/binutils-feedstock/master.svg?label=Linux">
       </a>
     </td>
   </tr>
