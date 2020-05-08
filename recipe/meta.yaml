@@ -111,13 +111,15 @@ outputs:
 
 about:
   home: https://www.gnu.org/software/binutils/
-  license: GPL 3
+  license: GPL-3.0-only
   license_file:
     - COPYING
     - COPYING.LIB
     - COPYING3
     - COPYING3.LIB
-  summary: A set of programming tools for creating and managing binary programs, object files, libraries, profile data, and assembly source code.
+  summary: |
+    A set of programming tools for creating and managing binary programs, object files,
+    libraries, profile data, and assembly source code.
 
 extra:
   recipe-maintainers:
