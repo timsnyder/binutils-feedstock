@@ -1,5 +1,5 @@
 {% set name = "binutils" %}
-{% set version = "2.33.1" %}
+{% set version = "2.34" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
 
 package:
@@ -8,17 +8,17 @@ package:
 
 source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-    sha256: 0cb4843da15a65a953907c96bad658283f3c4419d6bcc56bf2789db16306adb2
+    sha256: 89f010078b6cf69c23c27897d686055ab89b198dddf819efb0a4f2c38a0b36e6
     folder: .
 
   # Get the patches from crosstool-ng
-  # Using https://github.com/crosstool-ng/crosstool-ng/pull/1268
-  - url: https://github.com/isuruf/crosstool-ng/archive/931b37a4056fff186052c0e893a6682ab37e7035.tar.gz
-    sha256: b855a87957077c590f5d34754bee04b3a1154202f7823504c88db9eea61f4817
+  # Using https://github.com/crosstool-ng/crosstool-ng/pull/1309
+  - url: https://github.com/crosstool-ng/crosstool-ng/archive/db980376cdf74ada7b085e422c52c36a2ce85cd3.tar.gz
+    sha256: 4a0be5a8d3a2076391ef096ceeaa5d6b207ac424f6a18913894bce1dc434c463
     folder: crosstool_ng
 
 build:
-  number: 9
+  number: 0
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -56,7 +56,7 @@ outputs:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
     test:
       downstreams:
-        - gfortran_{{ target_platform }}
+        - gfortran_impl_{{ target_platform }}
         - gcc_impl_{{ target_platform }}
       commands:
         - {{ chost }}addr2line --help
@@ -123,3 +123,4 @@ extra:
   recipe-maintainers:
     - frol
     - isuruf
+    - jjhelmus
