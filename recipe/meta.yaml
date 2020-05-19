@@ -38,7 +38,6 @@ outputs:
       host:
         - sysroot_{{ target_platform }}
       run:
-        - sysroot_{{ target_platform }}
     test:
       commands:
         - {{ chost }}ld --help
@@ -52,6 +51,7 @@ outputs:
       build:
       host:
         - ld_impl_{{ target_platform }}
+        - sysroot_{{ target_platform }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
     test:
