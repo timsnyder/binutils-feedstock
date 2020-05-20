@@ -18,7 +18,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -127,3 +127,4 @@ extra:
     - frol
     - isuruf
     - jjhelmus
+    - beckermr
