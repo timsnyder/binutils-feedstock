@@ -38,6 +38,7 @@ outputs:
       host:
         - sysroot_{{ target_platform }}
       run:
+        - sysroot_{{ target_platform }}
     test:
       commands:
         - {{ chost }}ld --help
