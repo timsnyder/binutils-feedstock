@@ -18,7 +18,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -36,7 +36,9 @@ outputs:
     requirements:
       build:
       host:
+        - sysroot_{{ target_platform }}
       run:
+        - sysroot_{{ target_platform }}
     test:
       commands:
         - {{ chost }}ld --help
@@ -50,6 +52,7 @@ outputs:
       build:
       host:
         - ld_impl_{{ target_platform }}
+        - sysroot_{{ target_platform }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
     test:
@@ -109,16 +112,19 @@ outputs:
 
 about:
   home: https://www.gnu.org/software/binutils/
-  license: GPL 3
+  license: GPL-3.0-only
   license_file:
     - COPYING
     - COPYING.LIB
     - COPYING3
     - COPYING3.LIB
-  summary: A set of programming tools for creating and managing binary programs, object files, libraries, profile data, and assembly source code.
+  summary: |
+    A set of programming tools for creating and managing binary programs, object files,
+    libraries, profile data, and assembly source code.
 
 extra:
   recipe-maintainers:
     - frol
     - isuruf
     - jjhelmus
+    - beckermr
