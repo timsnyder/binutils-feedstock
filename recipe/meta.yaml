@@ -64,7 +64,7 @@ outputs:
     requirements:
       build:
       host:
-        - ld_impl_{{ target_platform }}
+        - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
         - sysroot_{{ target_platform }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
@@ -113,9 +113,9 @@ outputs:
     requirements:
       build:
       host:
-        - binutils_impl_{{ target_platform }}
+        - {{ pin_subpackage("binutils_impl_" ~ target_platform, exact=True) }}
       run:
-        - {{ pin_subpackage("binutils_impl_" ~ target_platform, max_pin="x.x.x") }}
+        - {{ pin_subpackage("binutils_impl_" ~ target_platform, exact=True) }}
     test:
       commands:
         - $PREFIX/bin/addr2line --help
