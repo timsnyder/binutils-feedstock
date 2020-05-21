@@ -5,7 +5,7 @@
 
 package:
   name: binutils_split
-  version: {{ version }}.0
+  version: {{ version }}
 
 source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
@@ -51,7 +51,7 @@ outputs:
         - gfortran_impl_{{ target_platform }} !=7.3.0
         - gfortran_impl_{{ target_platform }} !=8.2.0
         - gfortran_impl_{{ target_platform }} !=5.4.0
-        - binutils_impl_{{ target_platform }} {{ version }}.0 *_{{ build_num }}
+        - binutils_impl_{{ target_platform }} {{ version }}
     test:
       commands:
         - {{ chost }}ld --help
@@ -66,7 +66,7 @@ outputs:
     requirements:
       build:
       host:
-        - ld_impl_{{ target_platform }} {{ version }}.0 *_{{ build_num }}
+        - ld_impl_{{ target_platform }} {{ version }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
         - sysroot_{{ target_platform }}
@@ -88,7 +88,6 @@ outputs:
         - gfortran_impl_{{ target_platform }}
         - gcc_impl_{{ target_platform }}
       commands:
-        - ls -lah ${PREFIX}/bin
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
         - {{ chost }}as --help
