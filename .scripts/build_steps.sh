@@ -26,6 +26,7 @@ setup_conda_rc "${FEEDSTOCK_ROOT}" "${RECIPE_ROOT}" "${CONFIG_FILE}"
 
 source run_conda_forge_build_setup
 
+conda config --set channel_priority strict
 
 # Install the yum requirements defined canonically in the
 # "recipe/yum_requirements.txt" file. After updating that file,
@@ -38,7 +39,7 @@ source run_conda_forge_build_setup
 make_build_number "${FEEDSTOCK_ROOT}" "${RECIPE_ROOT}" "${CONFIG_FILE}"
 
 conda build "${RECIPE_ROOT}" -m "${CI_SUPPORT}/${CONFIG}.yaml" \
-    --clobber-file "${CI_SUPPORT}/clobber_${CONFIG}.yaml" --strict-channel-priority
+    --clobber-file "${CI_SUPPORT}/clobber_${CONFIG}.yaml"
 validate_recipe_outputs "binutils-feedstock"
 
 if [[ "${UPLOAD_PACKAGES}" != "False" ]]; then
