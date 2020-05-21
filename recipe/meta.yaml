@@ -50,6 +50,7 @@ outputs:
         - gfortran_impl_{{ target_platform }} !=7.3.0
         - gfortran_impl_{{ target_platform }} !=8.2.0
         - gfortran_impl_{{ target_platform }} !=5.4.0
+        - binutils_impl_{{ target_platform }} {{ version }}.0
     test:
       commands:
         - {{ chost }}ld --help
