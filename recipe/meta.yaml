@@ -61,10 +61,12 @@ outputs:
     build:
       merge_build_host: False
       detect_binary_files_with_prefix: False
+      ignore_run_exports:
+        - __glibc
     requirements:
       build:
       host:
-        - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
+        - ld_impl_{{ target_platform }}
         - sysroot_{{ target_platform }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
