@@ -10,11 +10,11 @@ set -e
 #    ln -sf "${fn}" "${new_fn}"
 #    varname=$(basename "${new_fn}" | tr a-z A-Z | sed "s/+/X/g" | sed "s/\./_/g" | sed "s/-/_/g")
 #    echo "$varname $CC"
-#    printf -v "$varname" "$BUILD_PREFIX/bin/${new_fn}"       
+#    printf -v "$varname" "$BUILD_PREFIX/bin/${new_fn}"
 #  done
 #popd
 
-for file in ./crosstool_ng/packages/binutils/$PKG_VERSION/*.patch; do
+for file in ./crosstool_ng/packages/binutils/${PKG_VERSION}/*.patch; do
   patch -p1 < $file;
 done
 

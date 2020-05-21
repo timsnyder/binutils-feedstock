@@ -26,6 +26,7 @@ setup_conda_rc "${FEEDSTOCK_ROOT}" "${RECIPE_ROOT}" "${CONFIG_FILE}"
 
 source run_conda_forge_build_setup
 
+conda config --set channel_priority strict
 
 # Install the yum requirements defined canonically in the
 # "recipe/yum_requirements.txt" file. After updating that file,

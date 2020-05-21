@@ -1,6 +1,7 @@
 {% set name = "binutils" %}
 {% set version = "2.34" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
+{% set build_num = 2 %}
 
 package:
   name: binutils_split
@@ -18,7 +19,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 1
+  number: {{ build_num }}
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -36,9 +37,21 @@ outputs:
     requirements:
       build:
       host:
-        - sysroot_{{ target_platform }}
       run:
-        - sysroot_{{ target_platform }}
+      run_constrained:
+        - gcc_impl_{{ target_platform }} !=7.2.0
+        - gcc_impl_{{ target_platform }} !=7.3.0
+        - gcc_impl_{{ target_platform }} !=8.2.0
+        - gcc_impl_{{ target_platform }} !=5.4.0
+        - gxx_impl_{{ target_platform }} !=7.2.0
+        - gxx_impl_{{ target_platform }} !=7.3.0
+        - gxx_impl_{{ target_platform }} !=8.2.0
+        - gxx_impl_{{ target_platform }} !=5.4.0
+        - gfortran_impl_{{ target_platform }} !=7.2.0
+        - gfortran_impl_{{ target_platform }} !=7.3.0
+        - gfortran_impl_{{ target_platform }} !=8.2.0
+        - gfortran_impl_{{ target_platform }} !=5.4.0
+        - binutils_impl_{{ target_platform }} {{ version }}
     test:
       commands:
         - {{ chost }}ld --help
@@ -48,13 +61,28 @@ outputs:
     build:
       merge_build_host: False
       detect_binary_files_with_prefix: False
+      ignore_run_exports:
+        - __glibc
     requirements:
       build:
       host:
-        - ld_impl_{{ target_platform }}
-        - sysroot_{{ target_platform }}
+        - ld_impl_{{ target_platform }} {{ version }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
+        - sysroot_{{ target_platform }}
+      run_constrained:
+        - gcc_impl_{{ target_platform }} !=7.2.0
+        - gcc_impl_{{ target_platform }} !=7.3.0
+        - gcc_impl_{{ target_platform }} !=8.2.0
+        - gcc_impl_{{ target_platform }} !=5.4.0
+        - gxx_impl_{{ target_platform }} !=7.2.0
+        - gxx_impl_{{ target_platform }} !=7.3.0
+        - gxx_impl_{{ target_platform }} !=8.2.0
+        - gxx_impl_{{ target_platform }} !=5.4.0
+        - gfortran_impl_{{ target_platform }} !=7.2.0
+        - gfortran_impl_{{ target_platform }} !=7.3.0
+        - gfortran_impl_{{ target_platform }} !=8.2.0
+        - gfortran_impl_{{ target_platform }} !=5.4.0
     test:
       downstreams:
         - gfortran_impl_{{ target_platform }}
