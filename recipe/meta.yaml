@@ -87,6 +87,7 @@ outputs:
         - gfortran_impl_{{ target_platform }}
         - gcc_impl_{{ target_platform }}
       commands:
+        - ls -lah ${PREFIX}/bin
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
         - {{ chost }}as --help
