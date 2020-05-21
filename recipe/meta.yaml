@@ -1,6 +1,7 @@
 {% set name = "binutils" %}
 {% set version = "2.34" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
+{% set build_num = 2 %}
 
 package:
   name: binutils_split
@@ -18,7 +19,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 2
+  number: {{ build_num }}
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -50,7 +51,7 @@ outputs:
         - gfortran_impl_{{ target_platform }} !=7.3.0
         - gfortran_impl_{{ target_platform }} !=8.2.0
         - gfortran_impl_{{ target_platform }} !=5.4.0
-        - binutils_impl_{{ target_platform }} {{ version }}.0
+        - binutils_impl_{{ target_platform }} {{ version }}.0 *_{{ build_num }}
     test:
       commands:
         - {{ chost }}ld --help
@@ -65,7 +66,7 @@ outputs:
     requirements:
       build:
       host:
-        - ld_impl_{{ target_platform }}  {{ version }}.0
+        - ld_impl_{{ target_platform }} {{ version }}.0 *_{{ build_num }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
         - sysroot_{{ target_platform }}
