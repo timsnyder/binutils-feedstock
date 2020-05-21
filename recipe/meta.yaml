@@ -18,7 +18,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 1
+  number: 2
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -39,6 +39,10 @@ outputs:
         - sysroot_{{ target_platform }}
       run:
         - sysroot_{{ target_platform }}
+      run_constrained:
+        - gcc_impl_{{ target_platform }} >={{ ctng_gcc|default("0") }}
+        - gxx_impl_{{ target_platform }} >={{ ctng_gcc|default("0") }}
+        - gfortran_impl_{{ target_platform }} >={{ ctng_gcc|default("0") }}
     test:
       commands:
         - {{ chost }}ld --help
@@ -55,6 +59,10 @@ outputs:
         - sysroot_{{ target_platform }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
+      run_constrained:
+        - gcc_impl_{{ target_platform }} >={{ ctng_gcc|default("0") }}
+        - gxx_impl_{{ target_platform }} >={{ ctng_gcc|default("0") }}
+        - gfortran_impl_{{ target_platform }} >={{ ctng_gcc|default("0") }}
     test:
       downstreams:
         - gfortran_impl_{{ target_platform }}
