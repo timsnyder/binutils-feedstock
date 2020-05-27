@@ -183,4 +183,3 @@ Feedstock Maintainers
 * [@frol](https://github.com/frol/)
 * [@isuruf](https://github.com/isuruf/)
 * [@jjhelmus](https://github.com/jjhelmus/)
-
