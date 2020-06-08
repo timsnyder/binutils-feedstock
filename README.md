@@ -3,12 +3,12 @@ About binutils_split
 
 Home: https://www.gnu.org/software/binutils/
 
-Package license: GPL 3
+Package license: GPL-3.0-only
 
 Feedstock license: BSD 3-Clause
 
-Summary: A set of programming tools for creating and managing binary programs, object
-files, libraries, profile data, and assembly source code.
+Summary: A set of programming tools for creating and managing binary programs, object files,
+libraries, profile data, and assembly source code.
 
 
 
@@ -183,4 +183,3 @@ Feedstock Maintainers
 * [@frol](https://github.com/frol/)
 * [@isuruf](https://github.com/isuruf/)
 * [@jjhelmus](https://github.com/jjhelmus/)
-

@@ -1,6 +1,7 @@
 {% set name = "binutils" %}
 {% set version = "2.34" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
+{% set build_num = 5 %}
 
 package:
   name: binutils_split
@@ -18,7 +19,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 5
+  number: {{ build_num }}
   skip: True  # [not linux]
   detect_binary_files_with_prefix: False
 
@@ -48,10 +49,12 @@ outputs:
     build:
       merge_build_host: False
       detect_binary_files_with_prefix: False
+      ignore_run_exports:
+        - __glibc
     requirements:
       build:
       host:
-        - ld_impl_{{ target_platform }}
+        - ld_impl_{{ target_platform }} {{ version }}
       run:
         - {{ pin_subpackage("ld_impl_" ~ target_platform, exact=True) }}
       run_constrained:
@@ -117,15 +120,15 @@ outputs:
 
 about:
   home: https://www.gnu.org/software/binutils/
-  license: GPL 3
+  license: GPL-3.0-only
   license_file:
     - COPYING
     - COPYING.LIB
     - COPYING3
     - COPYING3.LIB
   summary: |
-    A set of programming tools for creating and managing binary programs, object
-    files, libraries, profile data, and assembly source code.
+    A set of programming tools for creating and managing binary programs, object files,
+    libraries, profile data, and assembly source code.
 
 extra:
   recipe-maintainers:
