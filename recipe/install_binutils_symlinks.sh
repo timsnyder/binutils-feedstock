@@ -9,4 +9,3 @@ for tool in addr2line ar as c++filt dwp elfedit gprof ld ld.bfd ld.gold nm objco
 done
 
 ln -s "$PREFIX/bin/ld.gold" "$PREFIX/bin/gold"
-© 2020 GitHub, Inc.

@@ -11,4 +11,3 @@ for tool in addr2line ar as c++filt dwp elfedit gprof ld ld.bfd ld.gold nm objco
   rm -rf $PREFIX/$HOST/bin/$tool
   ln -s $PREFIX/bin/$HOST-$tool $PREFIX/$HOST/bin/$tool || true;
 done
-© 2020 GitHub, Inc.
