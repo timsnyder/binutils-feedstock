@@ -91,8 +91,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-binutils-green.svg)](https://anaconda.org/conda-forge/binutils) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils.svg)](https://anaconda.org/conda-forge/binutils) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils.svg)](https://anaconda.org/conda-forge/binutils) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils.svg)](https://anaconda.org/conda-forge/binutils) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-binutils_impl_osx--64-green.svg)](https://anaconda.org/conda-forge/binutils_impl_osx-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils_impl_osx-64.svg)](https://anaconda.org/conda-forge/binutils_impl_osx-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils_impl_osx-64.svg)](https://anaconda.org/conda-forge/binutils_impl_osx-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils_impl_osx-64.svg)](https://anaconda.org/conda-forge/binutils_impl_osx-64) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-ld_impl_osx--64-green.svg)](https://anaconda.org/conda-forge/ld_impl_osx-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ld_impl_osx-64.svg)](https://anaconda.org/conda-forge/ld_impl_osx-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ld_impl_osx-64.svg)](https://anaconda.org/conda-forge/ld_impl_osx-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ld_impl_osx-64.svg)](https://anaconda.org/conda-forge/ld_impl_osx-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-binutils_impl_linux--64-green.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils_impl_linux-64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils_impl_linux-64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils_impl_linux-64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ld_impl_linux--64-green.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ld_impl_linux-64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ld_impl_linux-64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ld_impl_linux-64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) |
 
 Installing binutils_split
 =========================
@@ -103,10 +103,10 @@ Installing `binutils_split` from the `conda-forge` channel can be achieved by ad
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `binutils, binutils_impl_osx-64, ld_impl_osx-64` can be installed with:
+Once the `conda-forge` channel has been enabled, `binutils, binutils_impl_linux-64, ld_impl_linux-64` can be installed with:
 
 ```
-conda install binutils binutils_impl_osx-64 ld_impl_osx-64
+conda install binutils binutils_impl_linux-64 ld_impl_linux-64
 ```
 
 It is possible to list all of the versions of `binutils` available on your platform with:
@@ -183,3 +183,4 @@ Feedstock Maintainers
 * [@frol](https://github.com/frol/)
 * [@isuruf](https://github.com/isuruf/)
 * [@jjhelmus](https://github.com/jjhelmus/)
+
