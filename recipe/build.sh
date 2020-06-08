@@ -14,14 +14,14 @@ set -e
 #  done
 #popd
 
-for file in ./crosstool_ng/packages/binutils/${PKG_VERSION}/*.patch; do
+for file in ./crosstool_ng/packages/binutils/$PKG_VERSION/*.patch; do
   patch -p1 < $file;
 done
 
 mkdir build
 cd build
 
-export HOST="${ctng_cpu_arch}-conda-linux-gnu"
+export HOST="${ctng_cpu_arch}-${ctng_vendor}-linux-gnu"
 
 ../configure \
   --prefix="$PREFIX" \
