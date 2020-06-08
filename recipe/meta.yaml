@@ -61,10 +61,14 @@ outputs:
         - sysroot_{{ target_platform }} ==99999999999
     test:
       downstreams:
-        - gfortran_impl_{{ target_platform }} ==7.3.0  # [x86_64 or aarch64]
-        - gcc_impl_{{ target_platform }} ==7.3.0       # [x86_64 or aarch64]
+        - gcc_impl_{{ target_platform }} ==7.3.0=hd420e75_5  # [x86_64]
+        - gfortran_impl_{{ target_platform }} ==7.3.0  # [x86_64]
+
+        - gcc_impl_{{ target_platform }} ==7.3.0=hfeefbbc_5  # [aarch64]
+        - gfortran_impl_{{ target_platform }} ==7.3.0  # [aarch64]
+
+        - gcc_impl_{{ target_platform }} ==8.2.0=h8635c71_5  # [ppc64le]
         - gfortran_impl_{{ target_platform }} ==8.2.0  # [ppc64le]
-        - gcc_impl_{{ target_platform }} ==8.2.0       # [ppc64le]
       commands:
         - {{ chost }}addr2line --help
         - {{ chost }}ar --help
