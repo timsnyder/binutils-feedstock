@@ -13,5 +13,3 @@ mkdir -p $PREFIX/$NEW_CHOST/bin
 mkdir -p $PREFIX/$CHOST/bin
 cp $PWD/install/$PREFIX/bin/$CHOST-ld $PREFIX/bin/$CHOST-ld
 ln -s $PREFIX/bin/$CHOST-ld $PREFIX/bin/$NEW_CHOST-ld
-ln -s $PREFIX/bin/$CHOST-ld $PREFIX/$NEW_CHOST/bin/ld
-ln -s $PREFIX/bin/$CHOST-ld $PREFIX/$CHOST/bin/ld
