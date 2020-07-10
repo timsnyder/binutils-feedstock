@@ -5,7 +5,7 @@ Home: https://www.gnu.org/software/binutils/
 
 Package license: GPL-3.0-only
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A set of programming tools for creating and managing binary programs, object files,
 libraries, profile data, and assembly source code.
