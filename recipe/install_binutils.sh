@@ -17,5 +17,3 @@ done
 
 rm $PREFIX/bin/$HOST-ld || true;
 rm $PREFIX/bin/$NEW_HOST-ld || true;
-rm $PREFIX/$NEW_HOST/bin/ld || true;
-rm $PREFIX/$HOST/bin/ld || true;
