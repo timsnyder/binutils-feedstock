@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: linux_aarch64_ctng_cpu_archaarch64c_hafde51a4cc
+name: linux_aarch64_ctng_cpu_archaarch64c_hbd61bcd575
 
 platform:
   os: linux
@@ -10,7 +10,7 @@ steps:
 - name: Install and build
   image: condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-aarch64
+    CONFIG: linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7target_platformlinux-aarch64
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -31,7 +31,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_ctng_cpu_archpowerpc6_h13c8c8e83a
+name: linux_aarch64_ctng_cpu_archpowerpc6_h05c68e0e4b
 
 platform:
   os: linux
@@ -41,7 +41,7 @@ steps:
 - name: Install and build
   image: condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-aarch64
+    CONFIG: linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7target_platformlinux-aarch64
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -62,7 +62,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_ctng_cpu_archx86_64ct_ha4ea7d7abc
+name: linux_aarch64_ctng_cpu_archx86_64ct_h33ba251966
 
 platform:
   os: linux
@@ -72,7 +72,7 @@ steps:
 - name: Install and build
   image: condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-aarch64
+    CONFIG: linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6target_platformlinux-aarch64
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:

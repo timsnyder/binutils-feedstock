@@ -6,10 +6,13 @@ ctng_cpu_arch:
 - x86_64
 ctng_target_platform:
 - linux-64
+ctng_vendor:
+- conda_cos6
 docker_image:
 - condaforge/linux-anvil-comp7
 target_platform:
 - linux-64
 zip_keys:
 - - ctng_cpu_arch
+  - ctng_vendor
   - ctng_target_platform

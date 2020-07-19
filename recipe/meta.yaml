@@ -46,6 +46,7 @@ outputs:
     test:
       commands:
         - {{ chost }}ld --help
+        - echo "{{ ctng_vendor }}"
 
   - name: binutils_impl_{{ ctng_target_platform }}
     script: install_binutils.sh
