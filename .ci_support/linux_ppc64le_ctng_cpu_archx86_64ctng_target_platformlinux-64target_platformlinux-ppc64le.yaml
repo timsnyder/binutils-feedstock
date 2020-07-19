@@ -1,0 +1,15 @@
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+ctng_cpu_arch:
+- x86_64
+ctng_target_platform:
+- linux-64
+docker_image:
+- condaforge/linux-anvil-ppc64le
+target_platform:
+- linux-ppc64le
+zip_keys:
+- - ctng_cpu_arch
+  - ctng_target_platform

@@ -10,13 +10,22 @@ env:
 
 matrix:
   include:
-    - env: CONFIG=linux_ppc64le_target_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+    - env: CONFIG=linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+      os: linux
+      arch: ppc64le
+
+    - env: CONFIG=linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+      os: linux
+      arch: ppc64le
+
+    - env: CONFIG=linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
       os: linux
       arch: ppc64le
 
 script:
   - export CI=travis
   - export GIT_BRANCH="$TRAVIS_BRANCH"
+  - export FEEDSTOCK_NAME=$(basename ${TRAVIS_REPO_SLUG})
 
 
   - if [[ ${PLATFORM} =~ .*linux.* ]]; then ./.scripts/run_docker_build.sh; fi

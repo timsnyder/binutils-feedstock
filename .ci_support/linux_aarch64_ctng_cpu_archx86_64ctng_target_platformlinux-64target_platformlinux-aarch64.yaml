@@ -9,8 +9,13 @@ channel_sources:
 channel_targets:
 - conda-forge main
 ctng_cpu_arch:
-- aarch64
+- x86_64
+ctng_target_platform:
+- linux-64
 docker_image:
 - condaforge/linux-anvil-aarch64
 target_platform:
 - linux-aarch64
+zip_keys:
+- - ctng_cpu_arch
+  - ctng_target_platform

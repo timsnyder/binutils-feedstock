@@ -5,7 +5,7 @@ Home: https://www.gnu.org/software/binutils/
 
 Package license: GPL-3.0-only
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A set of programming tools for creating and managing binary programs, object files,
 libraries, profile data, and assembly source code.
@@ -45,24 +45,66 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_aarch64_target_platformlinux-aarch64</td>
+              <td>linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_target_platformlinux-ppc64le</td>
+              <td>linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_target_platformlinux-ppc64le" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-aarch64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_target_platformlinux-64</td>
+              <td>linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_target_platformlinux-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-aarch64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64target_platformlinux-ppc64le" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64letarget_platformlinux-ppc64le" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64target_platformlinux-ppc64le" alt="variant">
                 </a>
               </td>
             </tr>
@@ -92,7 +134,11 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-binutils-green.svg)](https://anaconda.org/conda-forge/binutils) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils.svg)](https://anaconda.org/conda-forge/binutils) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils.svg)](https://anaconda.org/conda-forge/binutils) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils.svg)](https://anaconda.org/conda-forge/binutils) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-binutils_impl_linux--64-green.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils_impl_linux-64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils_impl_linux-64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils_impl_linux-64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-binutils_impl_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-aarch64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-binutils_impl_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/binutils_impl_linux-ppc64le) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ld_impl_linux--64-green.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ld_impl_linux-64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ld_impl_linux-64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ld_impl_linux-64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ld_impl_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/ld_impl_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ld_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ld_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ld_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/ld_impl_linux-aarch64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ld_impl_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/ld_impl_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ld_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/ld_impl_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ld_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/ld_impl_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ld_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/ld_impl_linux-ppc64le) |
 
 Installing binutils_split
 =========================
@@ -103,10 +149,10 @@ Installing `binutils_split` from the `conda-forge` channel can be achieved by ad
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `binutils, binutils_impl_linux-64, ld_impl_linux-64` can be installed with:
+Once the `conda-forge` channel has been enabled, `binutils, binutils_impl_linux-64, binutils_impl_linux-aarch64, binutils_impl_linux-ppc64le, ld_impl_linux-64, ld_impl_linux-aarch64, ld_impl_linux-ppc64le` can be installed with:
 
 ```
-conda install binutils binutils_impl_linux-64 ld_impl_linux-64
+conda install binutils binutils_impl_linux-64 binutils_impl_linux-aarch64 binutils_impl_linux-ppc64le ld_impl_linux-64 ld_impl_linux-aarch64 ld_impl_linux-ppc64le
 ```
 
 It is possible to list all of the versions of `binutils` available on your platform with:
@@ -183,3 +229,4 @@ Feedstock Maintainers
 * [@frol](https://github.com/frol/)
 * [@isuruf](https://github.com/isuruf/)
 * [@jjhelmus](https://github.com/jjhelmus/)
+
