@@ -13,3 +13,9 @@ ctng_target_platform:
   - linux-64        # [not linux32]
   - linux-ppc64le   # [not linux32]
   - linux-aarch64   # [not linux32]
+
+zip_keys:
+  -
+    - ctng_cpu_arch
+    - ctng_vendor
+    - ctng_target_platform
