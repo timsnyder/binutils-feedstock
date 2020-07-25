@@ -38,10 +38,6 @@ outputs:
       build:
       host:
       run:
-      run_constrained:
-        - gcc_impl_{{ ctng_target_platform }} !=7.2.0,!=7.3.0,!=8.2.0,!=5.4.0
-        - gxx_impl_{{ ctng_target_platform }} !=7.2.0,!=7.3.0,!=8.2.0,!=5.4.0
-        - gfortran_impl_{{ ctng_target_platform }} !=7.2.0,!=7.3.0,!=8.2.0,!=5.4.0
         - binutils_impl_{{ ctng_target_platform }} {{ version }}
     test:
       commands:
@@ -62,10 +58,6 @@ outputs:
       run:
         - {{ pin_subpackage("ld_impl_" ~ ctng_target_platform, exact=True) }}
         - sysroot_{{ ctng_target_platform }}
-      run_constrained:
-        - gcc_impl_{{ ctng_target_platform }} !=7.2.0,!=7.3.0,!=8.2.0,!=5.4.0
-        - gxx_impl_{{ ctng_target_platform }} !=7.2.0,!=7.3.0,!=8.2.0,!=5.4.0
-        - gfortran_impl_{{ ctng_target_platform }} !=7.2.0,!=7.3.0,!=8.2.0,!=5.4.0
     test:
       downstreams:
         - gfortran_impl_{{ ctng_target_platform }}
