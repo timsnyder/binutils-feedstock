@@ -1,5 +1,5 @@
 {% set name = "binutils" %}
-{% set version = "2.34" %}
+{% set version = "2.35" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
 {% set build_num = 8 %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-    sha256: 89f010078b6cf69c23c27897d686055ab89b198dddf819efb0a4f2c38a0b36e6
+    sha256: 7d24660f87093670738e58bcc7b7b06f121c0fcb0ca8fc44368d675a5ef9cff7
     folder: .
 
   # Get the patches from crosstool-ng
@@ -20,8 +20,8 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: True  # [win]
-  detect_binary_files_with_prefix: False
+  skip: true  # [win]
+  detect_binary_files_with_prefix: false
 
 requirements:
   build:
@@ -32,8 +32,8 @@ outputs:
   - name: ld_impl_{{ ctng_target_platform }}
     script: install_ld.sh
     build:
-      merge_build_host: False
-      detect_binary_files_with_prefix: False
+      merge_build_host: false
+      detect_binary_files_with_prefix: false
     requirements:
       build:
       host:
@@ -48,8 +48,8 @@ outputs:
   - name: binutils_impl_{{ ctng_target_platform }}
     script: install_binutils.sh
     build:
-      merge_build_host: False
-      detect_binary_files_with_prefix: False
+      merge_build_host: false
+      detect_binary_files_with_prefix: false
       ignore_run_exports:
         - __glibc
     requirements:
@@ -85,9 +85,9 @@ outputs:
   - name: binutils
     script: install_binutils_symlinks.sh
     build:
-      merge_build_host: False
-      detect_binary_files_with_prefix: False
-      skip: True  # [ctng_target_platform != target_platform]
+      merge_build_host: false
+      detect_binary_files_with_prefix: false
+      skip: true  # [ctng_target_platform != target_platform]
     requirements:
       build:
       host:
