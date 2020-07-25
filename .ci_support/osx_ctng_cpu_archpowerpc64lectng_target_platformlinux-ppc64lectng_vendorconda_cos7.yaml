@@ -1,0 +1,20 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+ctng_cpu_arch:
+- powerpc64le
+ctng_target_platform:
+- linux-ppc64le
+ctng_vendor:
+- conda_cos7
+macos_machine:
+- x86_64-apple-darwin13.4.0
+macos_min_version:
+- '10.9'
+zip_keys:
+- - ctng_cpu_arch
+  - ctng_vendor
+  - ctng_target_platform
