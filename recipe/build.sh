@@ -21,6 +21,13 @@ done
 mkdir build
 cd build
 
+if [[ "$target_platform" == "osx-64" ]]; then
+  export CPPFLAGS="$CPPFLAGS -mmacosx-version-min=${MACOSX_DEPLOYMENT_TARGET}"
+  export CFLAGS="$CFLAGS -mmacosx-version-min=${MACOSX_DEPLOYMENT_TARGET}"
+  export CXXFLAGS="$CXXFLAGS -mmacosx-version-min=${MACOSX_DEPLOYMENT_TARGET}"
+fi
+export LDFLAGS="$LDFLAGS -Wl,-rpath,$PREFIX/lib"
+
 export HOST="${ctng_cpu_arch}-conda-linux-gnu"
 
 ../configure \
