@@ -25,6 +25,7 @@ build:
 
 requirements:
   build:
+    - clangxx_{{ target_platform }}  # [not linux]
   host:
   run:
 
