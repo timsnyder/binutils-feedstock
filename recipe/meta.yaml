@@ -26,6 +26,7 @@ build:
 requirements:
   build:
     - clangxx_{{ target_platform }}  # [not linux]
+    - make   # [not linux]
   host:
   run:
 
