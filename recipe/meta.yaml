@@ -38,6 +38,7 @@ outputs:
       build:
       host:
       run:
+      run_constrained:
         - binutils_impl_{{ ctng_target_platform }} {{ version }}
     test:
       commands:
