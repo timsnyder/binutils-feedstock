@@ -25,8 +25,6 @@ build:
 
 requirements:
   build:
-    - clangxx_{{ target_platform }}  # [not linux]
-    - make   # [not linux]
   host:
   run:
 
@@ -103,6 +101,7 @@ outputs:
         - binutils_impl_{{ ctng_target_platform }}
       run:
         - {{ pin_subpackage("binutils_impl_" ~ ctng_target_platform, max_pin="x.x.x") }}
+        - libcxx >=4.0.0  # [osx]
     test:
       commands:
         - $PREFIX/bin/addr2line --help
