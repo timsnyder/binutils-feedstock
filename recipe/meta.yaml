@@ -25,6 +25,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}   # [osx]
+    - make                    # [osx]
   host:
   run:
 
