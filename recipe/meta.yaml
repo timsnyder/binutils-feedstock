@@ -43,6 +43,7 @@ outputs:
       commands:
         - {{ chost }}ld --help
         - echo "{{ ctng_vendor }}"
+        - echo {{ c_compiler_version }}
 
   - name: binutils_impl_{{ ctng_target_platform }}
     script: install_binutils.sh
@@ -80,6 +81,7 @@ outputs:
         - {{ chost }}size --help
         - {{ chost }}strings --help
         - {{ chost }}strip --help
+        - echo {{ c_compiler_version }}
 
   - name: binutils
     script: install_binutils_symlinks.sh
