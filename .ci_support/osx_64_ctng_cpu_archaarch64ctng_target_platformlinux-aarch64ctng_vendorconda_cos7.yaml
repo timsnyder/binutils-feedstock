@@ -5,15 +5,15 @@ channel_sources:
 channel_targets:
 - conda-forge main
 ctng_cpu_arch:
-- x86_64
+- aarch64
 ctng_target_platform:
-- linux-64
+- linux-aarch64
 ctng_vendor:
-- conda_cos6
+- conda_cos7
 macos_machine:
 - x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
+target_platform:
+- osx-64
 zip_keys:
 - - ctng_cpu_arch
   - ctng_vendor
