@@ -2,18 +2,20 @@ c_compiler:
 - gcc
 c_compiler_version:
 - '8'
+cdt_name:
+- cos7
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 ctng_cpu_arch:
-- powerpc64le
+- aarch64
 ctng_target_platform:
-- linux-ppc64le
+- linux-aarch64
 ctng_vendor:
 - conda_cos7
 docker_image:
-- condaforge/linux-anvil-ppc64le
+- quay.io/condaforge/linux-anvil-ppc64le
 target_platform:
 - linux-ppc64le
 zip_keys:

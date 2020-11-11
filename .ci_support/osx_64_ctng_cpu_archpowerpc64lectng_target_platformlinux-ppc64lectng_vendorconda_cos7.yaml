@@ -14,10 +14,6 @@ ctng_target_platform:
 - linux-ppc64le
 ctng_vendor:
 - conda_cos7
-cxx_compiler:
-- clangxx
-cxx_compiler_version:
-- '10'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
