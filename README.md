@@ -5,12 +5,10 @@ Home: https://www.gnu.org/software/binutils/
 
 Package license: GPL-3.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/binutils-feedstock/blob/master/LICENSE.txt)
 
 Summary: A set of programming tools for creating and managing binary programs, object files,
 libraries, profile data, and assembly source code.
-
-
 
 
 Current build status
@@ -45,66 +43,66 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7target_platformlinux-64</td>
+              <td>linux_64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7target_platformlinux-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7target_platformlinux-64</td>
+              <td>linux_64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7target_platformlinux-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6target_platformlinux-64</td>
+              <td>linux_64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6target_platformlinux-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7target_platformlinux-aarch64</td>
+              <td>linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7target_platformlinux-aarch64</td>
+              <td>linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6target_platformlinux-aarch64</td>
+              <td>linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6target_platformlinux-aarch64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7target_platformlinux-ppc64le</td>
+              <td>linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7target_platformlinux-ppc64le" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7target_platformlinux-ppc64le</td>
+              <td>linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7target_platformlinux-ppc64le" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6target_platformlinux-ppc64le</td>
+              <td>linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6target_platformlinux-ppc64le" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -238,7 +236,4 @@ Feedstock Maintainers
 * [@frol](https://github.com/frol/)
 * [@isuruf](https://github.com/isuruf/)
 * [@jjhelmus](https://github.com/jjhelmus/)
-
-
-<!-- dummy commit to enable rerendering -->
 

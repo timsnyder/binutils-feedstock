@@ -1,9 +1,15 @@
+BUILD:
+- aarch64-conda_cos7-linux-gnu
 c_compiler:
 - gcc
 c_compiler_version:
-- '8'
+- '7'
+cdt_arch:
+- aarch64
+cdt_name:
+- cos7
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 ctng_cpu_arch:
@@ -13,9 +19,9 @@ ctng_target_platform:
 ctng_vendor:
 - conda_cos7
 docker_image:
-- condaforge/linux-anvil-ppc64le
+- quay.io/condaforge/linux-anvil-aarch64
 target_platform:
-- linux-ppc64le
+- linux-aarch64
 zip_keys:
 - - ctng_cpu_arch
   - ctng_vendor

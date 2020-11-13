@@ -1,7 +1,7 @@
 {% set name = "binutils" %}
-{% set version = "2.35" %}
+{% set version = "2.35.1" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
-{% set build_num = 9 %}
+{% set build_num = 0 %}
 
 package:
   name: binutils_split
@@ -9,12 +9,12 @@ package:
 
 source:
   - url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-    sha256: 7d24660f87093670738e58bcc7b7b06f121c0fcb0ca8fc44368d675a5ef9cff7
+    sha256: 320e7a1d0f46fcd9f413f1046e216cbe23bb2bce6deb6c6a63304425e48b1942
     folder: .
 
   # Get the patches from crosstool-ng
-  - url: https://github.com/crosstool-ng/crosstool-ng/archive/e7da850fa2066c9f1adeba3d8525a7231d0e47bc.tar.gz
-    sha256: ba84dea3109b3fc1d8f7f12ffeade97ba58f62c628b61251db13cf918f55256b
+  - url: https://github.com/crosstool-ng/crosstool-ng/archive/ed3a1ff4b938f12bcb9bbfdb90d4e3d933d28b2d.tar.gz
+    sha256: 0f06cca6b662f01c48badc0ab36d99854c402731aa01049aa757dbb32d245d5e
     folder: crosstool_ng
 
 build:
