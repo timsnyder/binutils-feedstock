@@ -1,7 +1,7 @@
 {% set name = "binutils" %}
 {% set version = "2.35.1" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
-{% set build_num = 0 %}
+{% set build_num = 1 %}
 
 package:
   name: binutils_split
