@@ -1,4 +1,6 @@
 build_platform: {osx_arm64: osx_64}
 conda_forge_output_validation: true
-provider: {linux_aarch64: default, linux_ppc64le: default}
+# hmaarrfk 2021/01/31: 
+# linux_ppc64le uses azure because travis recently ran of out disk space
+provider: {linux_aarch64: default, linux_ppc64le: azure}
 test_on_native_only: true
