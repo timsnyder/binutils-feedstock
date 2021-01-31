@@ -18,7 +18,7 @@ source:
 
 build:
   number: 2
-  skip: true  # [win]
+  skip: true   # [win]
   detect_binary_files_with_prefix: false
 
 requirements:
