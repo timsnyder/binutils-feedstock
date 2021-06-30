@@ -1,7 +1,6 @@
 {% set name = "binutils" %}
 {% set version = "2.36.1" %}
 {% set chost = ctng_cpu_arch ~ "-" ~ ctng_vendor ~ "-linux-gnu-" %}
-{% set build_num = 0 %}
 
 package:
   name: binutils_split
@@ -18,8 +17,8 @@ source:
     folder: crosstool_ng
 
 build:
-  number: {{ build_num }}
-  skip: true  # [win]
+  number: 0
+  skip: true   # [win]
   detect_binary_files_with_prefix: false
 
 requirements:
