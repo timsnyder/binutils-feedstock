@@ -10,6 +10,8 @@ source:
   - url: https://ftp.gnu.org/gnu/binutils/binutils-{{ version }}.tar.bz2
     sha256: 5b4bd2e79e30ce8db0abd76dd2c2eae14a94ce212cfc59d3c37d23e24bc6d7a3
     folder: .
+    patches:
+      - patches/0001-fallback-sysroot.diff
 
   # Get the patches from crosstool-ng
   - url: https://github.com/crosstool-ng/crosstool-ng/archive/94b98a4cc96ff6c4ca982ea19db953447e802919.tar.gz
@@ -17,7 +19,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 0
+  number: 1
   skip: true   # [win]
   detect_binary_files_with_prefix: false
 
