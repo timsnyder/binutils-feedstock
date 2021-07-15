@@ -14,6 +14,9 @@ jobs:
       osx_64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7:
         CONFIG: osx_64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7
         UPLOAD_PACKAGES: 'True'
+      osx_64_ctng_cpu_archs390xctng_target_platformlinux-s390xctng_vendorconda_cos7:
+        CONFIG: osx_64_ctng_cpu_archs390xctng_target_platformlinux-s390xctng_vendorconda_cos7
+        UPLOAD_PACKAGES: 'True'
       osx_64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6:
         CONFIG: osx_64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6
         UPLOAD_PACKAGES: 'True'
@@ -22,6 +25,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_arm64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7:
         CONFIG: osx_arm64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_ctng_cpu_archs390xctng_target_platformlinux-s390xctng_vendorconda_cos7:
+        CONFIG: osx_arm64_ctng_cpu_archs390xctng_target_platformlinux-s390xctng_vendorconda_cos7
         UPLOAD_PACKAGES: 'True'
       osx_arm64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6:
         CONFIG: osx_arm64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6

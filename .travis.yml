@@ -10,14 +10,22 @@ matrix:
     - env: CONFIG=linux_ppc64le_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7 UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=quay.io/condaforge/linux-anvil-ppc64le
       os: linux
       arch: ppc64le
+      dist: focal
 
     - env: CONFIG=linux_ppc64le_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7 UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=quay.io/condaforge/linux-anvil-ppc64le
       os: linux
       arch: ppc64le
+      dist: focal
+
+    - env: CONFIG=linux_ppc64le_ctng_cpu_archs390xctng_target_platformlinux-s390xctng_vendorconda_cos7 UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=quay.io/condaforge/linux-anvil-ppc64le
+      os: linux
+      arch: ppc64le
+      dist: focal
 
     - env: CONFIG=linux_ppc64le_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6 UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=quay.io/condaforge/linux-anvil-ppc64le
       os: linux
       arch: ppc64le
+      dist: focal
 
 script:
   - export CI=travis
