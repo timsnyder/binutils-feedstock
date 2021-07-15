@@ -1,18 +1,18 @@
 ctng_cpu_arch:
-  - i686            # [linux32]
-  - x86_64          # [not linux32]
-  - powerpc64le     # [not linux32]
-  - aarch64         # [not linux32]
+  - x86_64
+  - powerpc64le
+  - aarch64
+  - s390x
 ctng_vendor:
-  - conda_cos6      # [linux32]
-  - conda_cos6      # [not linux32]
-  - conda_cos7      # [not linux32]
-  - conda_cos7      # [not linux32]
+  - conda_cos6
+  - conda_cos7
+  - conda_cos7
+  - conda_cos7
 ctng_target_platform:
-  - linux-32        # [linux32]
-  - linux-64        # [not linux32]
-  - linux-ppc64le   # [not linux32]
-  - linux-aarch64   # [not linux32]
+  - linux-64
+  - linux-ppc64le
+  - linux-aarch64
+  - linux-s390x
 
 zip_keys:
   -
