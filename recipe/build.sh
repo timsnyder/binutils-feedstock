@@ -56,7 +56,7 @@ cd build
 
 if [[ "$target_platform" == osx-arm64 ]]; then
   OSX_ARCH="arm64"
-elif [[ "$target_platform" -- osx-64 ]]; then
+elif [[ "$target_platform" == osx-64 ]]; then
   OSX_ARCH="x86_64"
 fi
 if [[ "$target_platform" == osx-* ]]; then
