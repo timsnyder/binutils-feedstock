@@ -90,7 +90,7 @@ fi
   --disable-nls \
   --enable-default-pie \
   --with-sysroot=$PREFIX/$HOST/sysroot \
-  $CONFIG_ARGS
+  $CONFIG_ARGS || (cat config.log; false)
 
 make -j${CPU_COUNT}
 
