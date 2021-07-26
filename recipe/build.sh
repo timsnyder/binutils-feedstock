@@ -72,7 +72,7 @@ export BUILD="$(get_triplet $build_platform)"
 export HOST="$(get_triplet $target_platform)"
 export TARGET="$(get_triplet $ctng_target_platform)"
 
-if [[ "$target_platform" != "$build_platform" ]]; then
+if [[ "$target_platform" != "$build_platform" && "$target_platform" == linux-* ]]; then
   export LDFLAGS="$LDFLAGS -static-libgcc -static-libstdc++"
 fi
 
