@@ -76,6 +76,12 @@ if [[ "$target_platform" != "$build_platform" && "$target_platform" == linux-* ]
   export LDFLAGS="$LDFLAGS -static-libgcc -static-libstdc++"
 fi
 
+# Workaround a problem in our gcc_bootstrap package
+if [[ -d $BUILD_PREFIX/$BUILD/sysroot/usr/lib64 && ! -d $BUILD_PREFIX/$BUILD/sysroot/usr/lib ]]; then
+  mkdir -p $BUILD_PREFIX/$BUILD/sysroot/usr
+  ln -sf $BUILD_PREFIX/$BUILD/sysroot/usr/lib64 $BUILD_PREFIX/$BUILD/sysroot/usr/lib
+fi
+
 ../configure \
   --prefix="$PREFIX" \
   --build=$BUILD \
