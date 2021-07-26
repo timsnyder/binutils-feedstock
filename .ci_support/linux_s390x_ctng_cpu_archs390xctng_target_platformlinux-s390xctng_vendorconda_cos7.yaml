@@ -1,0 +1,22 @@
+c_compiler:
+- gcc
+c_compiler_version:
+- '9'
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+ctng_cpu_arch:
+- s390x
+ctng_target_platform:
+- linux-s390x
+ctng_vendor:
+- conda_cos7
+docker_image:
+- quay.io/condaforge/linux-anvil-comp7
+target_platform:
+- linux-s390x
+zip_keys:
+- - ctng_cpu_arch
+  - ctng_vendor
+  - ctng_target_platform
