@@ -26,6 +26,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}   # [build_platform != target_platform]
+    - make                    # [osx]
   host:
   run:
 
