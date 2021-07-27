@@ -182,34 +182,6 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=osx&configuration=osx_64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>osx_arm64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_ctng_cpu_archaarch64ctng_target_platformlinux-aarch64ctng_vendorconda_cos7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_ctng_cpu_archpowerpc64lectng_target_platformlinux-ppc64lectng_vendorconda_cos7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_ctng_cpu_archs390xctng_target_platformlinux-s390xctng_vendorconda_cos7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_ctng_cpu_archs390xctng_target_platformlinux-s390xctng_vendorconda_cos7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3695&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/binutils-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_ctng_cpu_archx86_64ctng_target_platformlinux-64ctng_vendorconda_cos6" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
