@@ -19,6 +19,7 @@ for tool in addr2line ar as c++filt dwp elfedit gprof ld.bfd ld.gold nm objcopy 
   fi
 done
 
+rm $PREFIX/bin/ld || true;
 rm $PREFIX/bin/$HOST-ld || true;
 rm $PREFIX/bin/$OLD_HOST-ld || true;
 rm $PREFIX/$OLD_HOST/bin/ld || true;
