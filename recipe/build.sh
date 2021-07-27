@@ -76,7 +76,7 @@ if [[ "$target_platform" != "$build_platform" && "$target_platform" == linux-* ]
   export LDFLAGS="$LDFLAGS -static-libgcc -static-libstdc++"
 fi
 
-# Workaround a problem in our gcc_bootstrap package
+# Workaround a problem in conda-build. xref https://github.com/conda/conda-build/pull/4253
 if [[ -d $BUILD_PREFIX/$HOST/sysroot/usr/lib64 && ! -d $BUILD_PREFIX/$HOST/sysroot/usr/lib ]]; then
   mkdir -p $BUILD_PREFIX/$HOST/sysroot/usr
   ln -sf $BUILD_PREFIX/$HOST/sysroot/usr/lib64 $BUILD_PREFIX/$HOST/sysroot/usr/lib
