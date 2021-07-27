@@ -14,6 +14,9 @@ for tool in addr2line ar as c++filt dwp elfedit gprof ld.bfd ld.gold nm objcopy 
   ln -s $PREFIX/bin/$HOST-$tool $PREFIX/$HOST/bin/$tool || true;
   ln -s $PREFIX/bin/$HOST-$tool $PREFIX/$OLD_HOST/bin/$tool || true;
   ln -s $PREFIX/bin/$HOST-$tool $PREFIX/bin/$OLD_HOST-$tool || true;
+  if [[ "$target_platform" == "$ctng_target_platform" ]]; then
+      mv $PREFIX/bin/$tool $PREFIX/bin/$HOST-$tool
+  fi
 done
 
 rm $PREFIX/bin/$HOST-ld || true;

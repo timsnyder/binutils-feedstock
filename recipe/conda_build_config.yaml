@@ -14,7 +14,7 @@ ctng_target_platform:
   - linux-aarch64
   - linux-s390x
 cxx_compiler:       # [linux]
-  - gcc_bootstrap   # [linux]
+  - gxx_impl   # [linux]
 zip_keys:
   -
     - ctng_cpu_arch
