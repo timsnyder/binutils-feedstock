@@ -19,12 +19,14 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 1
+  number: 2
   skip: true   # [win]
   detect_binary_files_with_prefix: false
 
 requirements:
   build:
+    - {{ compiler('cxx') }}   # [build_platform != target_platform and linux]
+    - make                    # [osx]
   host:
   run:
 
@@ -34,8 +36,11 @@ outputs:
     build:
       merge_build_host: false
       detect_binary_files_with_prefix: false
+      ignore_run_exports_from:
+        - {{ compiler('cxx') }}   # [build_platform != target_platform and linux]
     requirements:
       build:
+        - {{ compiler('cxx') }}   # [build_platform != target_platform and linux]
       host:
       run:
       run_constrained:
@@ -53,8 +58,11 @@ outputs:
       detect_binary_files_with_prefix: false
       ignore_run_exports:
         - __glibc
+      ignore_run_exports_from:
+        - {{ compiler('cxx') }}   # [build_platform != target_platform and linux]
     requirements:
       build:
+        - {{ compiler('cxx') }}   # [build_platform != target_platform and linux]
       host:
         - ld_impl_{{ ctng_target_platform }} {{ version }}
       run:
