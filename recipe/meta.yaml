@@ -19,7 +19,7 @@ source:
     folder: crosstool_ng
 
 build:
-  number: 2
+  number: 3
   skip: true   # [win]
   detect_binary_files_with_prefix: false
 
@@ -105,6 +105,7 @@ outputs:
       run:
         - {{ pin_subpackage("binutils_impl_" ~ ctng_target_platform, max_pin="x.x.x") }}
         - libcxx >=4.0.0  # [osx]
+        - bash
     test:
       commands:
         - $PREFIX/bin/addr2line --help
